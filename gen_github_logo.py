@@ -55,7 +55,7 @@ svg_parts.append('</g>')
 
 svg_parts.append('</svg>')
 
-with open("/mnt/user-data/outputs/github_logo.svg", "w") as f:
+with open("github_logo.svg", "w") as f:
     f.write("\n".join(svg_parts))
 
 print("Wrote github_logo.svg")

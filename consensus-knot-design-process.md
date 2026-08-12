@@ -1,15 +1,12 @@
 # The Consensus Knot: icon design process
 
-A log of how this mark was designed, why each decision was made, and how to
-regenerate it (or your own variant of it) from scratch.
-
 ## The idea
 
 The mark needed to hold up as a small, abstract personal/brand icon while
 carrying meaning across a few domains at once, rather than committing to a
 single literal reading:
 
-- **Distributed systems** — a nod to Raft/Paxos-style leader election and consensus
+- **Distributed systems** — a nod to leader election and consensus
 - **Society** — agreement, cooperation, mutual aid
 - **Relationships** — interdependence and connectedness
 - **Graph theory** — small structures, disproportionately deep implications (a wink toward TREE(3))
@@ -117,25 +114,6 @@ change between variants.
 | `transparent` | none | `#3aada0` | `#3aada0` @ 35% | `#ffffff` fill, `#2b2b2b` stroke |
 | `neutral-dark` | `#1c1c1c` | `#3aada0` | `#3aada0` @ 60% | `#e8e8e8`, no stroke |
 | `teal-field` | `#15302d` | `#8fe0d3` | `#8fe0d3` @ 55% | `#eef7f5`, no stroke |
-
-## Reproducing it
-
-`consensus_knot.py` (in this repo) renders any of the palettes above at any
-size list. It draws at high resolution (1024px by default) and downsamples
-with Lanczos filtering — the same supersample-then-shrink approach real
-favicon pipelines use — so small sizes stay clean rather than looking like a
-naive small-scale vector rasterization.
-
-```bash
-pip install pillow
-python consensus_knot.py --field teal-field --sizes 16,32,128,512 --out ./out
-```
-
-To try your own variant, edit the `PALETTES` dict at the top of the script —
-add an entry with your own background/leader/connection/neutral colors and
-pass its name to `--field`. To try a different tilt or node count, adjust
-`ANGLES` (add a fourth angle for a 4-node version, for example) and update
-the edge-drawing loop to connect however many nodes you have.
 
 ## Rejected directions, for the record
 
